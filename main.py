@@ -41,7 +41,7 @@ def make_ball():
 
     def collison():
         if ball.y > SCREEN_HEIGHT - BALL_SIZE or ball.y < BALL_SIZE:
-            ball.change_y *= -1
+            ball.change_y *= 1
         if ball.x > SCREEN_WIDTH - BALL_SIZE or ball.x < BALL_SIZE:
                 ball.change_x *= -1
  
