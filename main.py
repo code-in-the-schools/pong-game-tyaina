@@ -27,6 +27,8 @@ def __init__(self):
         self.y = 0
         self.change_x = 0
         self.change_y = 0
+        self.hitbox = (self.x - 25,self.y - 25,55,55)
+
  
  
 def make_ball():
@@ -57,6 +59,7 @@ class Paddle():
        self.image = Paddle.image
        self.image = pygame.transform.scale(self.image,(250,200))
        self.y= 0
+       self.hitbox = (self.x - 25,self.y - 25,55,55)
 def makePaddle(self):
     paddle = Paddle()
     rect_width = 15
