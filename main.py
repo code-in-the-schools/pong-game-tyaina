@@ -1,5 +1,6 @@
 import pygame
 import random
+import os
 
 
 
@@ -13,10 +14,15 @@ BALL_SIZE = 25
  
  
 class Ball:
-    """
+   image_path = os.path.join('pong.png')
+   def __init__(self):
+       Ball.image = pygame.image.load("pong.png")
+       self.image = Ball.image
+       self.image = pygame.transform.scale(self.image,(250,200))
+       """
     Class to keep track of a ball's location and vector.
     """
-    def __init__(self):
+def __init__(self):
         self.x = 0
         self.y = 0
         self.change_x = 0
