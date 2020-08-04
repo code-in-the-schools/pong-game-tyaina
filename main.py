@@ -11,10 +11,10 @@ WHITE = (255, 255, 255)
 SCREEN_WIDTH = 700
 SCREEN_HEIGHT = 500
 BALL_SIZE = 25
- 
- 
+
+
+image_path = os.path.join('pong.png')
 class Ball:
-   image_path = os.path.join('pong.png')
    def __init__(self):
        Ball.image = pygame.image.load("pong.png")
        self.image = Ball.image
@@ -51,10 +51,14 @@ def make_ball():
         if ball.x > SCREEN_WIDTH - BALL_SIZE or ball.x < BALL_SIZE:
                 ball.change_x *= -1
  
-class paddle():
+class Paddle():
    def __init__(self):
-    self.y= 0
+       Paddle.image = pygame.image.load("rect.png")
+       self.image = Paddle.image
+       self.image = pygame.transform.scale(self.image,(250,200))
+       self.y= 0
 def makePaddle(self):
+    paddle = Paddle()
     rect_width = 15
     rect_height = 100
     screen = pygame.display.set_mode(SCREEN_WIDTH, SCREEN_HEIGHT)
@@ -66,6 +70,7 @@ def makePaddle(self):
             self.y += 1
             if key[pygame.K_UP]:
                 self.y -= 1
+                return paddle
 
     def wall():
           screen = pygame.display.set_mode(SCREEN_WIDTH, SCREEN_HEIGHT)
