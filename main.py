@@ -1,4 +1,4 @@
-import pygame
+iimport pygame
 import random
 import os
 
@@ -71,8 +71,9 @@ def makePaddle(self):
             if key[pygame.K_UP]:
                 self.y -= 1
                 return paddle
-
-    def wall():
+class Wall():
+    def __init__(self):
+        def wall(width,height,x,y):
           screen = pygame.display.set_mode(SCREEN_WIDTH, SCREEN_HEIGHT)
           pygame.draw.rect(screen, BLACK, 0,SCREEN_WIDTH)
           pygame.draw.rect(screen, BLACK, 0,SCREEN_HEIGHT)
@@ -90,6 +91,9 @@ while running:
         running = False
         screen = pygame.display.set_mode(SCREEN_WIDTH, SCREEN_HEIGHT)
         screen.fill((255,255,255))
+        Ball.draw
+        Paddle.draw
+        wall.draw
 
 clock = pygame.time.Clock()
 clock.tick(60)
