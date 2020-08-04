@@ -29,7 +29,10 @@ def __init__(self):
         self.change_y = 0
         self.hitbox = (self.x - 25,self.y - 25,55,55)
 
- 
+def draw(self, surface):
+        surface.blit(self.image,(self.x,self.y))
+        def __init__(self):
+         pygame.sprite.Sprite.__init__(self)
  
 def make_ball():
     """
@@ -47,6 +50,8 @@ def make_ball():
  
     return ball
 
+    
+    
     def collison():
         if ball.y > SCREEN_HEIGHT - BALL_SIZE or ball.y < BALL_SIZE:
             ball.change_y *= 1
@@ -60,6 +65,10 @@ class Paddle():
        self.image = pygame.transform.scale(self.image,(250,200))
        self.y= 0
        self.hitbox = (self.x - 25,self.y - 25,55,55)
+       def draw(self, surface):
+            surface.blit(self.image,(self.x,self.y))
+            def __init__(self):
+                pygame.sprite.Sprite.__init__(self)
 def makePaddle(self):
     paddle = Paddle()
     rect_width = 15
@@ -96,7 +105,7 @@ while running:
         screen.fill((255,255,255))
         Ball.draw
         Paddle.draw
-        wall.draw
+        Wall.draw
 
 clock = pygame.time.Clock()
 clock.tick(60)
