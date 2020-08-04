@@ -54,7 +54,7 @@ def make_ball():
     
     def collison():
         if ball.y > SCREEN_HEIGHT - BALL_SIZE or ball.y < BALL_SIZE:
-            ball.change_y *= 1
+            ball.change_y *= -1
         if ball.x > SCREEN_WIDTH - BALL_SIZE or ball.x < BALL_SIZE:
                 ball.change_x *= -1
  
@@ -66,9 +66,9 @@ class Paddle():
        self.y= 0
        self.hitbox = (self.x - 25,self.y - 25,55,55)
        def draw(self, surface):
-            surface.blit(self.image,(self.x,self.y))
-            def __init__(self):
-                pygame.sprite.Sprite.__init__(self)
+        surface.blit(self.image,(self.x,self.y))
+        def __init__(self):
+            pygame.sprite.Sprite.__init__(self)
 def makePaddle(self):
     paddle = Paddle()
     rect_width = 15
@@ -103,9 +103,11 @@ while running:
         running = False
         screen = pygame.display.set_mode(SCREEN_WIDTH, SCREEN_HEIGHT)
         screen.fill((255,255,255))
-        Ball.draw
-        Paddle.draw
-        Wall.draw
-
+        Paddle.paddle_movement(SCREEN_WIDTH, SCREEN_HEIGHT)
+        Paddle.draw(screen)
+        Ball.make_ball(SCREEN_WIDTH, SCREEN_HEIGHT)
+        Wall.draw(screen)
+        pygame.display.update()
+        
 clock = pygame.time.Clock()
 clock.tick(60)
