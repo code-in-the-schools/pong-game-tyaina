@@ -66,7 +66,7 @@ class Paddle():
        self.y= 0
        self.hitbox = (self.x - 25,self.y - 25,55,55)
        def draw(self, surface):
-        surface.blit(self.image,(self.x,self.y))
+        surface.blit(self.image,(700,self.y))
         def __init__(self):
             pygame.sprite.Sprite.__init__(self)
 def makePaddle(self):
@@ -91,6 +91,10 @@ class Wall():
           pygame.draw.rect(screen, BLACK, 0,SCREEN_HEIGHT)
           pygame.draw.rect(screen, BLACK, 250,SCREEN_WIDTH)
 
+    def Goal_Keep():
+        total=0
+        if Ball.image >= SCREEN_WIDTH:
+            total += 1
 
 pygame.init()
 pygame.display.set_caption("Pong")
@@ -108,6 +112,12 @@ while running:
         Ball.make_ball(SCREEN_WIDTH, SCREEN_HEIGHT)
         Wall.draw(screen)
         pygame.display.update()
+        def Goal_Keep():
+            if Ball.image >= SCREEN_WIDTH:
+                total=0
+                total += 1
+                print(total)
         
 clock = pygame.time.Clock()
 clock.tick(60)
+
