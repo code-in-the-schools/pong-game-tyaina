@@ -68,7 +68,7 @@ class Paddle():
        def draw(self, surface):
         surface.blit(self.image,(700,self.y))
         def __init__(self):
-            pygame.sprite.Sprite.__init__(self)
+         pygame.sprite.Sprite.__init__(self)
 def makePaddle(self):
     paddle = Paddle()
     rect_width = 15
@@ -109,15 +109,16 @@ while running:
         screen.fill((255,255,255))
         Paddle.paddle_movement(SCREEN_WIDTH, SCREEN_HEIGHT)
         Paddle.draw(screen)
+        Ball.draw(screen)
         Ball.make_ball(SCREEN_WIDTH, SCREEN_HEIGHT)
         Wall.draw(screen)
-        pygame.display.update()
         def Goal_Keep():
             if Ball.image >= SCREEN_WIDTH:
                 total=0
                 total += 1
                 print(total)
+        pygame.display.update()
         
+pygame.display.flip()        
 clock = pygame.time.Clock()
 clock.tick(60)
-
